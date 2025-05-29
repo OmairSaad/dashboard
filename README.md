@@ -1,6 +1,3 @@
-Here is the content from the right side of the dashboard image written as it would appear in a `README.md` file:
-
-````markdown
 # DASHBOARD
 
 *Empower Your Insights with Dynamic, Interactive Dashboards*
@@ -92,25 +89,3 @@ Using `npm`:
 
 ```bash
 npm start
-````
-
----
-
-## Testing
-
-Dashboard uses the **{test\_framework}** test framework. Run the test suite with:
-
-Using `npm`:
-
-```bash
-npm test
-```
-
----
-
-🔙 **Return**
-
-```
-
-Let me know if you want this saved as a file or if you'd like the `{test_framework}` placeholder replaced with a specific test library.
-```
