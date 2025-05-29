@@ -1,72 +1,3 @@
-// import {  type FC } from "react";
-// import { GoClockFill } from "react-icons/go";
-// import { HiDotsVertical, HiRefresh } from "react-icons/hi";
-// import { HiMiniPlus } from "react-icons/hi2";
-// import { useDispatch } from "react-redux";
-// import type { AppDispatch } from "../store";
-// import { setSearchTerm } from "../features/category/categorySlice";
-
-// const Header: FC = () => {
-//   const dispatch = useDispatch<AppDispatch>();
-//   const handleInput = (searchTerm:string) => {
-//     dispatch(setSearchTerm(searchTerm));
-//   }
-//   return (
-//     <header className="flex justify-between items-center p-5">
-//       <div className="font-semibold ">CNAPP Dashboard</div>
-//       <div className="flex gap-x-5">
-//         <button className="bg-white cursor-pointer px-4 py-2 border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-3">
-//           Add Widget
-//           <span>
-//             <HiMiniPlus size={20} />
-//           </span>
-//         </button>
-//         <button className="bg-white cursor-pointer px-4 py-2 border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-3">
-//           <HiRefresh />
-//         </button>
-//         <button className="bg-white cursor-pointer px-4 py-2 border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-3">
-//           <HiDotsVertical />
-//         </button>
-//         <div className="border border-blue-900 rounded-md p-2 flex items-center cursor-pointer">
-//           <span className="border-r-2 border-blue-900 pr-2">
-//             <GoClockFill />
-//           </span>
-//           <select className="text-bue-900 focus:outline-0 pl-2 cursor-pointer">
-//             <option value="">lats 2 daya</option>
-//             <option value="1">1</option>
-//             <option value="2">2</option>
-//           </select>
-//         </div>
-//         <input type="text" placeholder="search" onChange={(event)=> handleInput(event.target.value)} />
-//       </div>
-
-
-
-
-//       {/* SideBar */}
-      
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import { type FC, useEffect, useState } from "react";
 import { GoClockFill } from "react-icons/go";
@@ -78,6 +9,7 @@ import {
   updateVisibleWidgets,
 } from "../features/category/categorySlice";
 import SidebarModal from "./SideBarModal";
+import { notify } from "../utils/Notify";
 
 const Header: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -114,6 +46,7 @@ const Header: FC = () => {
   const handleConfirm = () => {
     dispatch(updateVisibleWidgets(selectedWidgets));
     setShowSidebar(false);
+    notify("Widgets updated!")
   };
 
   const openSidebar = () => {
@@ -130,8 +63,8 @@ const Header: FC = () => {
           onClick={openSidebar}
           className="bg-white cursor-pointer px-4 py-2 border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-2 hover:bg-gray-100 transition"
         >
-          <HiMiniPlus size={18} />
-          Add Widget
+          <HiMiniPlus size={15} />
+          Add
         </button>
 
         <button className="bg-white cursor-pointer p-2 border border-gray-400 rounded-md text-gray-500 hover:bg-gray-100 transition">
@@ -143,15 +76,17 @@ const Header: FC = () => {
         </button>
 
         <div className="border border-blue-900 rounded-md p-2 flex items-center cursor-pointer">
-          <span className="border-r-2 border-blue-900 pr-2">
-            <GoClockFill />
+          <span className="border-r-2 border-blue-900 pr-2 md:pr-0 md:border-0">
+            <GoClockFill className="text-blue-900" />
           </span>
-          <select className="text-blue-900 focus:outline-none pl-2 bg-transparent cursor-pointer">
+
+          <select className="hidden md:block text-blue-900 focus:outline-none pl-2 bg-transparent cursor-pointer text-sm">
             <option>Last 2 days</option>
             <option>1 day</option>
             <option>2 days</option>
           </select>
         </div>
+
       </div>
 
       {/* Sidebar */}
