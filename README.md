@@ -11,13 +11,13 @@
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="./public/sc1.png" alt="Dashboard Screenshot 1" width="600"/>
+  <img src="./public/screenshots//sc1.png" alt="Dashboard Screenshot 1" width="600"/>
 </p>
 <p align="center">
-  <img src="./public/sc2.png" alt="Dashboard Screenshot 2" width="600"/>
+  <img src="./public/screenshots//sc2.png" alt="Dashboard Screenshot 2" width="600"/>
 </p>
 <p align="center">
-  <img src="./public/sc3.png" alt="Dashboard Screenshot 3" width="600"/>
+  <img src="./public/screenshots//sc3.png" alt="Dashboard Screenshot 3" width="600"/>
 </p>
 
 ---
