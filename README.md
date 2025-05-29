@@ -88,4 +88,4 @@ Run the project with:
 Using `npm`:
 
 ```bash
-npm start
+npm run dev
