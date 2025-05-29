@@ -2,6 +2,7 @@
 
 import { type FC } from "react";
 import WidgetsList from "./WidgetsList";
+import { IoCloseSharp } from "react-icons/io5";
 
 type Widget = {
   id: string;
@@ -38,15 +39,15 @@ const SidebarModal: FC<SidebarModalProps> = ({
   const activeCategory = categories.find(cat => cat.id === activeTab);
 
   return (
-    <div className="fixed right-0 top-0 h-full w-[400px] bg-white shadow-2xl p-6 z-50 flex flex-col border-l border-gray-300">
+    <div className="fixed right-0 top-0 h-full w-full max-w-[400px] bg-white shadow-2xl p-3 sm:p-6 z-50 flex flex-col border-l border-gray-300">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-700">Manage Widgets</h2>
+        <h2 className=" sm:text-xl font-semibold text-gray-700">Manage Widgets</h2>
         <button
           onClick={onClose}
-          className="text-gray-500 text-xl hover:text-black transition"
+          className="text-gray-500 text-xl hover:text-black transition cursor-pointer rounded-full p-1 hover:bg-gray-100 flex items-center justify-center w-8 h-8"
         >
-          ✕
+         <IoCloseSharp />
         </button>
       </div>
 
@@ -75,13 +76,13 @@ const SidebarModal: FC<SidebarModalProps> = ({
       <div className="mt-6 flex justify-end gap-3 border-t pt-4">
         <button
           onClick={onClose}
-          className="px-4 py-2 rounded-md border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
+          className="px-4 py-1.5 cursor-pointer rounded-md border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
         >
           Cancel
         </button>
         <button
           onClick={handleConfirm}
-          className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+          className="px-4 py-1.5 cursor-pointer rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
         >
           Confirm
         </button>

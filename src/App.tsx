@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from './store';
 import { setCatgories } from './features/category/categorySlice';
 
-
+import './App.css';
 
 const App = (): React.ReactElement => {
   const router = createBrowserRouter(routes);

@@ -54,33 +54,42 @@ const Header: FC = () => {
     setShowSidebar(true);
   };
 
-  return (
-    <header className="flex justify-between items-center p-5 bg-white shadow-md z-10 w-full sticky top-0 left-0">
-      <div className="font-semibold text-lg">CNAPP Dashboard</div>
 
-      <div className="flex gap-x-4 items-center">
+  if (showSidebar) {
+    document.body.style.height = "100vh";
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.height = "auto";
+    document.body.style.overflowY = "auto";
+  }
+
+  return (
+    <header className="sm:flex justify-between items-center p-5 bg-white shadow-md z-10 w-full sticky top-0 left-0">
+      <div className="font-semibold text-lg mb-5 sm:mb-0">CNAPP Dashboard</div>
+
+      <div className="flex gap-x-2 sm:gap-x-4 items-center justify-end sm:justify-baseline">
         <button
           onClick={openSidebar}
-          className="bg-white cursor-pointer px-4 py-2 border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-2 hover:bg-gray-100 transition"
+          className="bg-white cursor-pointer px-2 h-[30px] border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-2 hover:bg-gray-100 transition"
         >
           <HiMiniPlus size={15} />
           Add
         </button>
 
-        <button className="bg-white cursor-pointer p-2 border border-gray-400 rounded-md text-gray-500 hover:bg-gray-100 transition">
+        <button className="bg-white cursor-pointer px-2 h-[30px] border border-gray-400 rounded-md text-gray-500 hover:bg-gray-100 transition">
           <HiRefresh />
         </button>
 
-        <button className="bg-white cursor-pointer p-2 border border-gray-400 rounded-md text-gray-500 hover:bg-gray-100 transition">
+        <button className="bg-white cursor-pointer px-2 h-[30px] border border-gray-400 rounded-md text-gray-500 hover:bg-gray-100 transition">
           <HiDotsVertical />
         </button>
 
-        <div className="border border-blue-900 rounded-md p-2 flex items-center cursor-pointer">
+        <div className="border border-blue-900 rounded-md px-2 h-[30px] flex items-center cursor-pointer">
           <span className="border-r-2 border-blue-900 pr-2 md:pr-0 md:border-0">
             <GoClockFill className="text-blue-900" />
           </span>
 
-          <select className="hidden md:block text-blue-900 focus:outline-none pl-2 bg-transparent cursor-pointer text-sm">
+          <select className=" text-blue-900 focus:outline-none pl-2 bg-transparent cursor-pointer text-sm">
             <option>Last 2 days</option>
             <option>1 day</option>
             <option>2 days</option>
