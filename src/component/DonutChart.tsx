@@ -1,34 +1,36 @@
-import { type FC } from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 import type { ChartData } from "../utils/CategoryTypes";
 
-interface DoughnutInt {
+// Register ChartJS components
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+interface DonutChartProps {
   data: ChartData;
 }
 
-const DonutChart: FC<DoughnutInt> = ({ data }) => {
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: "50%",
-    layout: {
-      padding: 0,
-    },
-    plugins: {
-      legend: {
-        labels: {
-          padding: 10,
-        },
-      },
-    },
-  };
-  
-
+const DonutChart = ({ data }: DonutChartProps) => {
   return (
     <div style={{ height: "200px", width: "300px" }}>
-      <Doughnut data={data} options={options} />
+      <Doughnut 
+        data={data}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '65%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12,
+                padding: 20
+              }
+            }
+          }
+        }}
+      />
     </div>
   );
 };
 
-export default DonutChart;
+export default  DonutChart;
