@@ -73,7 +73,7 @@ const SidebarModal: FC<SidebarModalProps> = ({
       <WidgetsList activeCategory={activeCategory} handleCheckbox={handleCheckbox} selectedWidgets={selectedWidgets}  />
 
       {/* Footer */}
-      <div className="mt-6 flex justify-end gap-3 border-t pt-4">
+      <div className="mt-6 flex justify-end gap-3 border-t border-gray-400 pt-4">
         <button
           onClick={onClose}
           className="px-4 py-1.5 cursor-pointer rounded-md border border-gray-400 text-gray-700 hover:bg-gray-200 transition"

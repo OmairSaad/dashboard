@@ -67,7 +67,7 @@ const Header: FC = () => {
     <header className="sm:flex justify-between items-center p-5 bg-white shadow-md z-10 w-full sticky top-0 left-0">
       <div className="font-bold text-lg mb-5 sm:mb-0">CNAPP Dashboard</div>
 
-      <div className="flex gap-x-2 sm:gap-x-4 items-center justify-end sm:justify-baseline">
+      <div className="flex gap-x-2 sm:gap-x-4 items-center justify-start">
         <button
           onClick={openSidebar}
           className="bg-white cursor-pointer px-2 h-[30px] border border-gray-400 rounded-md text-gray-500 flex items-center gap-x-2 hover:bg-gray-100 transition"
