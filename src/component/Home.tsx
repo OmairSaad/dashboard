@@ -38,12 +38,12 @@ const Home: FC = () => {
   const handlRemoveWidget = (wid: string, catId: string) => {
     // call dispatch method 
     dispatch(removeWidgets({ catId: catId, wId: wid }));
-    notify("Widget deleted successfully!")
+    notify("Widget deleted successfully!","success")
   };
 
   const handleAddWidget = () => {
     if (widgetName.trim() === "" || widgetText.trim() === "") {
-      alert("Fields can not be empty!");
+      notify("Widget Name and Text cannot be empty!", "error");
       return;
     }
 
@@ -62,7 +62,7 @@ const Home: FC = () => {
     setWidgetName("");
     setWidgetText("");
 
-    notify("Widget Added Succesfully!")
+    notify("Widget Added Succesfully!", "success")
   };
 
   if (showModal) {
@@ -111,8 +111,6 @@ const Home: FC = () => {
       {/* Modal */}
       {showModal && (
         <AddWidgetModal
-          widgetName={widgetName}
-          widgetText={widgetText}
           setWidgetName={setWidgetName}
           setWidgetText={setWidgetText}
           onClose={() => setShowModal(false)}

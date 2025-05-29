@@ -46,7 +46,7 @@ const Header: FC = () => {
   const handleConfirm = () => {
     dispatch(updateVisibleWidgets(selectedWidgets));
     setShowSidebar(false);
-    notify("Widgets updated!")
+    notify("Widgets updated!", "success")
   };
 
   const openSidebar = () => {
@@ -65,7 +65,7 @@ const Header: FC = () => {
 
   return (
     <header className="sm:flex justify-between items-center p-5 bg-white shadow-md z-10 w-full sticky top-0 left-0">
-      <div className="font-semibold text-lg mb-5 sm:mb-0">CNAPP Dashboard</div>
+      <div className="font-bold text-lg mb-5 sm:mb-0">CNAPP Dashboard</div>
 
       <div className="flex gap-x-2 sm:gap-x-4 items-center justify-end sm:justify-baseline">
         <button

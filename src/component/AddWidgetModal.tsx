@@ -4,8 +4,6 @@ import React from "react";
 import { MdOutlineClose } from "react-icons/md";
 
 interface AddWidgetModalProps {
-  widgetName: string;
-  widgetText: string;
   setWidgetName: (value: string) => void;
   setWidgetText: (value: string) => void;
   onClose: () => void;
@@ -13,8 +11,6 @@ interface AddWidgetModalProps {
 }
 
 const AddWidgetModal: React.FC<AddWidgetModalProps> = ({
-  widgetName,
-  widgetText,
   setWidgetName,
   setWidgetText,
   onClose,
@@ -22,7 +18,7 @@ const AddWidgetModal: React.FC<AddWidgetModalProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 bg-[#0000004a] backdrop-blur-sm flex justify-center items-center z-50">
-      <div className="bg-white rounded-md w-full max-w-md shadow-xl overflow-hidden">
+      <div className="bg-white rounded-md mx-auto w-[90%] max-w-md shadow-xl overflow-hidden">
         <div className="bg-blue-600 px-4 py-2 text-white flex justify-between items-center">
           <h2 className="text-lg font-semibold">Add New Widget</h2>
           <span onClick={onClose} className="cursor-pointer">
@@ -32,18 +28,16 @@ const AddWidgetModal: React.FC<AddWidgetModalProps> = ({
         <div className="mt-5 px-4">
           <input
             type="text"
-            value={widgetName}
             onChange={(e) => setWidgetName(e.target.value)}
             placeholder="Widget Name"
-            className="w-full border border-gray-200 bg-white focus:outline-gray-400 px-3 py-2 rounded-md mb-5"
+            className="w-full border border-gray-200 bg-white placeholder:text-gray-300 placeholder:text-sm focus:outline-gray-400 px-3 py-2 rounded-md mb-5"
           />
 
           <input
             type="text"
-            value={widgetText}
             onChange={(e) => setWidgetText(e.target.value)}
             placeholder="Widget Text"
-            className="w-full border border-gray-200 bg-white focus:outline-gray-400 px-3 py-2 rounded-md mb-5"
+            className="w-full border border-gray-200 placeholder:text-gray-300 placeholder:text-sm bg-white focus:outline-gray-400 px-3 py-2 rounded-md mb-5"
           />
         </div>
 
