@@ -1,91 +1,149 @@
-# DASHBOARD
+# 🚀 DASHBOARD
 
 *Empower Your Insights with Dynamic, Interactive Dashboards*
 
-[![text content](https://img.shields.io/badge/text--content-1dc9b7)]() [![today](https://img.shields.io/badge/today-1dc9b7)]() [![typescript](https://img.shields.io/badge/typescript-95.0%25-blue)]() [![language](https://img.shields.io/badge/languages-1)]()
-
-*Built with the tools and technologies:*
-
-![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb)
-![Markdown](https://img.shields.io/badge/Markdown-000000?logo=markdown)
-![Vite](https://img.shields.io/badge/Vite-646cff?logo=vite&logoColor=fff)
-![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?logo=javascript&logoColor=000)
-![Redux](https://img.shields.io/badge/Redux-764abc?logo=redux&logoColor=fff)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=fff)
-![Vite](https://img.shields.io/badge/Vite-646cff?logo=vite&logoColor=fff)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?logo=chartdotjs&logoColor=fff)
+[![Today](https://img.shields.io/badge/Today-May_29,_2025-1dc9b7?style=for-the-badge&logo=clockify)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue?style=for-the-badge&logo=typescript)]()
+[![Languages](https://img.shields.io/badge/Languages-1-blue?style=for-the-badge&logo=code)]()
 
 ---
 
-## Table of Contents
+## 🖼️ Screenshots
 
-- [Overview](#overview)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-
----
-
-## Overview
-
-**dashboard** is a powerful developer tool designed to streamline the creation of interactive and responsive applications using modern technologies like React, TypeScript, and Vite.
-
-### Why dashboard?
-
-This project aims to simplify the development process while enhancing user experience. The core features include:
-
-- 🧰 **Modern Tech Stack**: Built with React, TypeScript, and Vite for a robust and maintainable codebase.
-- 📦 **State Management**: Utilizes Redux for efficient state management, ensuring seamless data flow.
-- ⚡ **Responsive Design**: Integrates Tailwind CSS for a utility-first approach, enabling rapid UI development.
-- 🎯 **Dynamic Components**: Features interactive components like charts and modals for enhanced user engagement.
-- 🔄 **Real-time Updates**: Supports real-time updates and notifications, improving user experience.
-- 🛡 **Type Safety**: Leverages TypeScript for strict type-checking, enhancing code quality and reducing bugs.
+<p align="center">
+  <img src="./public/sc1.png" alt="Dashboard Screenshot 1" width="600"/>
+</p>
+<p align="center">
+  <img src="./public/sc2.png" alt="Dashboard Screenshot 2" width="600"/>
+</p>
+<p align="center">
+  <img src="./public/sc3.png" alt="Dashboard Screenshot 3" width="600"/>
+</p>
 
 ---
 
-## Getting Started
+## 🛠️ Tech Stack
+
+![React](https://img.shields.io/badge/⚛️%20React-20232a?logo=react&logoColor=61dafb&style=flat-square)
+![Vite](https://img.shields.io/badge/⚡%20Vite-646cff?logo=vite&logoColor=fff&style=flat-square)
+![Redux](https://img.shields.io/badge/🛒%20Redux-764abc?logo=redux&logoColor=fff&style=flat-square)
+![TypeScript](https://img.shields.io/badge/🔷%20TypeScript-3178c6?logo=typescript&logoColor=fff&style=flat-square)
+![TailwindCSS](https://img.shields.io/badge/💨%20TailwindCSS-38bdf8?logo=tailwindcss&logoColor=fff&style=flat-square)
+![Chart.js](https://img.shields.io/badge/📊%20Chart.js-FF6384?logo=chartdotjs&logoColor=fff&style=flat-square)
+![ESLint](https://img.shields.io/badge/🧹%20ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat-square)
+
+---
+
+## ✨ About
+
+**Dashboard** is a modern, responsive, and interactive web dashboard built as a coding task. It leverages the latest frontend technologies to provide a clean UI, dynamic charts, and easy category/widget management.
+
+---
+
+## 🎯 Features
+
+- ⚛️ Built with React + Vite for fast development
+- 🔷 TypeScript for type safety
+- 🛒 Redux Toolkit for state management
+- 💨 TailwindCSS for utility-first styling
+- 📊 Chart.js for beautiful, animated charts
+- 🧩 Modular, reusable components
+- 🛎️ Toast notifications for user feedback
+- 📱 Fully responsive design
+
+---
+
+## 📁 Project Structure
+
+```
+dashboard/
+│
+├── public/
+│   ├── mock.json
+│   ├── sc1.png
+│   ├── sc2.png
+│   └── sc3.png
+│
+└── src/
+    ├── assets/
+    ├── components/
+    ├── features/
+    ├── pages/
+    ├── routes/
+    ├── types/
+    ├── utils/
+    ├── App.tsx
+    ├── App.css
+    └── main.tsx
+```
+
+---
+
+## 🚦 Getting Started
 
 ### Prerequisites
 
-This project requires the following dependencies:
-
-- **Programming Language**: TypeScript
-- **Package Manager**: Npm
+- Node.js (v16+)
+- npm
 
 ### Installation
 
-Build dashboard from the source and install dependencies:
-
-1. **Clone the repository**:
-
+1. **Clone the repository:**
     ```bash
-    git clone https://github.com/OmairSana/dashboard
+    git clone https://github.com/OmairSaad/dashboard
     ```
 
-2. **Navigate to the project directory**:
-
+2. **Navigate to the project directory:**
     ```bash
     cd dashboard
     ```
 
-3. **Install the dependencies**:
-
-    Using `npm`:
-
+3. **Install dependencies:**
     ```bash
     npm install
     ```
 
 ---
 
-## Usage
+## ▶️ Usage
 
-Run the project with:
-
-Using `npm`:
+Start the development server:
 
 ```bash
 npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the dashboard.
+
+---
+
+## 📦 Scripts
+
+| Command           | Description                |
+|-------------------|---------------------------|
+| `npm run dev`     | Start development server  |
+| `npm run build`   | Build for production      |
+| `npm run preview` | Preview production build  |
+| `npm run lint`    | Lint code with ESLint     |
+
+---
+
+## 📊 Demo Data
+
+You can customize categories and widgets by editing `public/mock.json`.
+
+---
+
+## 🤝 Contributing
+
+Contributions and suggestions are welcome! Please open an issue or submit a pull request.
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+> 🏁 Task completed by [OmairSaad](https://github.com/OmairSaad)
