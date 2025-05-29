@@ -4,6 +4,7 @@ import type { Widget } from "../utils/CategoryTypes";
 import { X } from "lucide-react";
 import { VscGraphLine } from "react-icons/vsc";
 
+// type for the props of WidgetCard component
 interface WidgetCardInt {
   ele: Widget;
   onRemove: (wid: string, catId: string) => void;
@@ -16,8 +17,8 @@ export const WidgetCard: FC<WidgetCardInt> = ({ ele, catId, onRemove }) => {
 
   return (
     <div className="relative bg-white w-full min-w-[350px] shadow-md rounded-md h-[300px] p-5 group">
-      {/* Remove Icon */}
-      <button
+      <button 
+        // evoke the onRemove function when the button is clicked
         onClick={() => onRemove(ele.id, catId)}
         className="absolute cursor-pointer top-3 right-3 p-1 rounded-full text-white hover:scale-[1.02]  bg-red-600 opacity-0 group-hover:opacity-100 transition"
       >
@@ -37,6 +38,7 @@ export const WidgetCard: FC<WidgetCardInt> = ({ ele, catId, onRemove }) => {
 
       {clonedChartData && (
         <div className="mt-3">
+          {/* Render the DonutChart component with the cloned chart data */}
           <DonutChart data={clonedChartData} />
         </div>
       )}

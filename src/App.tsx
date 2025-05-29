@@ -8,13 +8,19 @@ import { setCatgories } from './features/category/categorySlice';
 import './App.css';
 
 const App = (): React.ReactElement => {
+  //setup the router and dispatch with proper type
   const router = createBrowserRouter(routes);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
+    // Fetch categories from mock.json and dispatch to store
     fetch('/mock.json').then(res => res.json()).then(res => dispatch(setCatgories(res.categories)));
   },[])
-  return <RouterProvider router={router} />;
+
+  //Proide routing to the app
+  return (
+    <RouterProvider router={router} />
+  )
 };
 
 export default App

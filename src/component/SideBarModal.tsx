@@ -4,6 +4,7 @@ import { type FC } from "react";
 import WidgetsList from "./WidgetsList";
 import { IoCloseSharp } from "react-icons/io5";
 
+// Define types for Widget and Category
 type Widget = {
   id: string;
   widgetName: string;
@@ -17,6 +18,7 @@ type Category = {
   widgets: Widget[];
 };
 
+//define props type for the SidebarModal component
 interface SidebarModalProps {
   categories: Category[];
   activeTab: string;
@@ -36,8 +38,8 @@ const SidebarModal: FC<SidebarModalProps> = ({
   handleConfirm,
   onClose,
 }) => {
+  // Find the active category based on the activeTab
   const activeCategory = categories.find(cat => cat.id === activeTab);
-
   return (
     <div className="fixed right-0 top-0 h-full w-full max-w-[400px] bg-white shadow-2xl p-3 sm:p-6 z-50 flex flex-col border-l border-gray-300">
       {/* Header */}
@@ -62,14 +64,15 @@ const SidebarModal: FC<SidebarModalProps> = ({
                   ? "border-blue-600 text-blue-600"
                   : "border-gray-300 text-gray-700 hover:text-blue-500"
                 }`}
-            >
+            >  
+              {/* Display only the first word of the category name */}
               {cat.name.split(" ")[0]}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Widgets */}
+      {/* Widgets List */}
       <WidgetsList activeCategory={activeCategory} handleCheckbox={handleCheckbox} selectedWidgets={selectedWidgets}  />
 
       {/* Footer */}

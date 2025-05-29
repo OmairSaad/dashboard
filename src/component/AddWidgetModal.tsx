@@ -1,8 +1,7 @@
-// components/AddWidgetModal.tsx
 
 import React from "react";
 import { MdOutlineClose } from "react-icons/md";
-
+// Define the props for the AddWidgetModal component
 interface AddWidgetModalProps {
   setWidgetName: (value: string) => void;
   setWidgetText: (value: string) => void;
@@ -28,6 +27,7 @@ const AddWidgetModal: React.FC<AddWidgetModalProps> = ({
         <div className="mt-5 px-4">
           <input
             type="text"
+            // Set the widget name
             onChange={(e) => setWidgetName(e.target.value)}
             placeholder="Widget Name"
             className="w-full border border-gray-200 bg-white placeholder:text-gray-300 placeholder:text-sm focus:outline-gray-400 px-3 py-2 rounded-md mb-5"
@@ -35,6 +35,7 @@ const AddWidgetModal: React.FC<AddWidgetModalProps> = ({
 
           <input
             type="text"
+            // Set the widget text
             onChange={(e) => setWidgetText(e.target.value)}
             placeholder="Widget Text"
             className="w-full border border-gray-200 placeholder:text-gray-300 placeholder:text-sm bg-white focus:outline-gray-400 px-3 py-2 rounded-md mb-5"

@@ -12,6 +12,7 @@ import SidebarModal from "./SideBarModal";
 import { notify } from "../utils/Notify";
 
 const Header: FC = () => {
+  // State variables for managing sidebar visibility, active tab, selected widgets, and categories
   const dispatch = useDispatch<AppDispatch>();
   const { categories } = useSelector((state: RootSate) => state.category);
 
@@ -22,13 +23,14 @@ const Header: FC = () => {
   }>({});
   const [categData, setCategData] = useState(categories);
 
-
-
+  // Effect to set initial category data and active tab when categories change
+  // This will run when the component mounts or when categories change
   useEffect(() => {
     setCategData(categories);
     setActiveTab(categories[0]?.id || "");
   }, [categories]);
 
+  // This function initializes the selectedWidgets state with the visibility status of each widget
   const updateInitialVisibleValue = () => {
     const initial: { [key: string]: boolean } = {};
     categories.forEach((cat) => {
@@ -38,17 +40,20 @@ const Header: FC = () => {
     });
     setSelectedWidgets(initial);
   };
-
+  
+  // This function handles the checkbox toggle for each widget
   const handleCheckbox = (id: string) => {
     setSelectedWidgets((prev) => ({ ...prev, [id]: !prev[id] }));
   };
-
+  
+  // This function updates the visible widgets in the Redux store and closes the sidebar
   const handleConfirm = () => {
     dispatch(updateVisibleWidgets(selectedWidgets));
     setShowSidebar(false);
     notify("Widgets updated!", "success")
   };
-
+  
+  // This function opens the sidebar and initializes the selected widgets
   const openSidebar = () => {
     updateInitialVisibleValue();
     setShowSidebar(true);

@@ -1,5 +1,7 @@
 import { type FC } from 'react'
 import type { Category } from '../utils/CategoryTypes'
+
+//props type for the WidgetsList component
 interface typWidgetList{
     activeCategory: Category | undefined ,
     selectedWidgets: {[key:string]:boolean},
@@ -36,6 +38,7 @@ const WidgetsList: FC<typWidgetList> = ({activeCategory, selectedWidgets, handle
                     </div>
                 </>
             ) : (
+                // if no active category is selected
                 <p>No category found.</p>
             )}
         </div>

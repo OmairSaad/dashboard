@@ -7,9 +7,9 @@ import  { store } from "./store.tsx"
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    {/* Make Redux store available to the entire app */}
     <Provider store={store}>
     <App />
     </Provider>
-      
   </StrictMode>,
 )

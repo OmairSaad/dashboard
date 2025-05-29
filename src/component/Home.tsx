@@ -13,7 +13,8 @@ import { ToastContainer } from "react-toastify";
 import { notify } from "../utils/Notify";
 
 const Home: FC = () => {
-
+  // State variables for managing modal and widget data
+  // and dispatch for Redux actions
   const [showModal, setShowModal] = useState(false);
   const [widgetName, setWidgetName] = useState("");
   const [widgetText, setWidgetText] = useState("");
@@ -22,6 +23,9 @@ const Home: FC = () => {
   const { categories, searchTerm } = useSelector(
     (state: RootSate) => state.category
   );
+
+  // Filtered categories based on search term
+  // This will update whenever the search term or categories change
   const [filteredCategories, setFilteredCategories] = useState(categories);
   useEffect(() => {
     const ctgs = categories.filter((cat) =>
@@ -29,24 +33,29 @@ const Home: FC = () => {
     );
     setFilteredCategories(ctgs);
   }, [searchTerm, categories]);
-
+  
+  // On clik addwidgetmodal opens and sets the category ID
+  // This function is called when the "Add Widget" button is clicked
   const handlOnClik = (id: string) => {
     setCatId(id);
     setShowModal(true);
   };
 
+  // Function to handle the removal of a widget
   const handlRemoveWidget = (wid: string, catId: string) => {
-    // call dispatch method 
+    // Dispatch the removeWidgets action with the category ID and widget ID
     dispatch(removeWidgets({ catId: catId, wId: wid }));
     notify("Widget deleted successfully!","success")
   };
-
+  
+  // Function to handle adding a new widget
   const handleAddWidget = () => {
+    // Check if widget name and text are not empty
     if (widgetName.trim() === "" || widgetText.trim() === "") {
       notify("Widget Name and Text cannot be empty!", "error");
       return;
     }
-
+    // Dispatch the addWidget action with the category ID and new widget data
     dispatch(
       addWidget({
         catId: catId,
@@ -64,7 +73,8 @@ const Home: FC = () => {
 
     notify("Widget Added Succesfully!", "success")
   };
-
+  
+  // Effect to handle body styles when the modal is open or closed
   if (showModal) {
     document.body.style.height = "100vh";
     document.body.style.overflowY = "hidden";
@@ -75,6 +85,8 @@ const Home: FC = () => {
 
   return (
     <div className="px-5 my-5">
+      {/* Toast container for notifications */}
+      {/* This will display notifications on the screen */}
       < ToastContainer />
       {/* searchbar component */}
       <SearchBar />
@@ -84,6 +96,7 @@ const Home: FC = () => {
           <div className="flex justify-between gap-x-5 overflow-x-auto overflow-y-hidden custom-scroll pb-3">
             {item.widgets.map(
               (ele, i) =>
+                // Render each widget card if the widget is visible
                 ele.isVisible && (
                   <WidgetCard
                     key={i}

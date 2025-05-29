@@ -1,5 +1,6 @@
 import { Bounce, toast } from "react-toastify";
 
+// creating options for toast notifications 
 const options = {
     position: "top-center" as const,
     autoClose: 3000,
@@ -11,6 +12,8 @@ const options = {
     theme: "light",
     transition: Bounce
 };
+
+// Define the type for toast messages
 type toastType = "success" | "error" | "info" | "warning";
 export const notify = (message: string, toastType: toastType) => {
     switch (toastType) {

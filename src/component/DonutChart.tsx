@@ -5,10 +5,12 @@ import type { ChartData } from "../utils/CategoryTypes";
 // Register ChartJS components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+//defined the type for the props of DonutChart component
 interface DonutChartProps {
   data: ChartData;
 }
 
+// DonutChart component to render a donut chart using Chart.js and react-chartjs-2
 const DonutChart = ({ data }: DonutChartProps) => {
   return (
     <div style={{ height: "200px", width: "300px" }}>
