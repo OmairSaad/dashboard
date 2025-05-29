@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+body{
+    background: rgb(237, 237, 255);
+}
+
+/* .custom-scroll */
+
+.custom-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+  background: #ebebeb; border-radius: 10px;
+}
+ 
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #cfcdcd; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #bcbcbc; 
+}
