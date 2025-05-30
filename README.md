@@ -2,6 +2,7 @@
 
 *Empower Your Insights with Dynamic, Interactive Dashboards*
 
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_to_Explore-1dc9b7?style=for-the-badge&logo=netlify)](https://dashboardassignmentt.netlify.app/)
 [![Today](https://img.shields.io/badge/Today-May_29,_2025-1dc9b7?style=for-the-badge&logo=clockify)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue?style=for-the-badge&logo=typescript)]()
 [![Languages](https://img.shields.io/badge/Languages-1-blue?style=for-the-badge&logo=code)]()
