@@ -17,11 +17,10 @@ export const WidgetCard: FC<WidgetCardInt> = ({ ele, catId, onRemove }) => {
 
   return (
     <div className="relative bg-white w-full min-w-[350px] shadow-md rounded-md h-[300px] p-5 group">
-      <button 
+      <button
         // evoke the onRemove function when the button is clicked
         onClick={() => onRemove(ele.id, catId)}
-        className="absolute cursor-pointer top-3 right-3 p-1 rounded-full text-white hover:scale-[1.02]  bg-red-600 opacity-0 group-hover:opacity-100 transition"
-      >
+        className="absolute cursor-pointer top-3 right-3 p-1 rounded-full text-white hover:scale-[1.02] bg-red-600 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition"      >
         <X size={18} />
       </button>
 
